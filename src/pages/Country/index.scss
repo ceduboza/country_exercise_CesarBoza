@@ -1,0 +1,67 @@
+.country-detail-page {
+    $self: &;
+
+    padding: 5vh 5vw;
+    position: relative;
+    display: flex;
+    gap: 5rem;
+
+    h1 {
+        font-size: 6vw;
+        line-height: 10vh;
+    }
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+
+        h1 {
+            line-height: 4vh;
+        }
+
+        #{$self}__block {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__block {
+        display: flex;
+        width: 50%;
+
+        &--flag {
+            align-items: center;
+            justify-content: center;
+        }
+
+        &--info {
+            flex-direction: column;
+            align-items: center;
+            gap: 5rem;
+        }
+    }
+
+    &__flag {
+        line-height: 0;
+        font-size: 20vw;
+    }
+
+    &__property-list{
+        width: 100%;
+    }
+
+    &__property{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__property-name {
+        font-weight: bold;
+        font-size: 3vw;
+        font-style: italic;
+    }
+
+    &__property-value {
+        font-size: 2vw;
+    }
+}

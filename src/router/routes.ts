@@ -4,11 +4,18 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
+    children: [{ path: '', component: () => import('pages/Home/index.vue') }],
   },
-
-  // Always leave this as last one,
-  // but you can also remove it
+  {
+    path: '/wishlist',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/Wishlist/index.vue') }],
+  },
+  {
+    path: '/country/:name',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component:() => import('pages/Country/index.vue') }],
+  },
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue'),
