@@ -41,40 +41,4 @@ defineProps<{
 }>();
 </script>
 
-<style lang="scss">
-.country-card-mobile {
-    &__main-info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    &__title {
-        font-size: 1.5rem;
-    }
-
-    &__flag {
-        font-size: 4rem;
-    }
-
-    &__info-section {
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__block {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    &__info {
-        font-style: italic;
-        font-size: 1rem;
-    }
-
-    &__actions {
-        display: flex;
-        justify-content: flex-end;
-    }
-}
-</style>
+<style lang="scss" src="./country-card-mobile.scss" />
