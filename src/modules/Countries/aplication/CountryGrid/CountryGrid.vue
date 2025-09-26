@@ -18,7 +18,7 @@
 </template>
 <script setup lang="ts">
 import { computed } from 'vue';
-import CountryCard from 'src/modules/Countries/aplication/CountryCardDesktop/CountryCardDesktop.vue';
+import CountryCardDesktop from 'src/modules/Countries/aplication/CountryCardDesktop/CountryCardDesktop.vue';
 import CountryCardMobile from 'src/modules/Countries/aplication/CountryCardMobile/CountryCardMobile.vue';
 import type { Country } from '../../domain/entities/Country';
 import GridSkeleton from 'src/components/GridSkeleton.vue';
@@ -37,7 +37,7 @@ const countryCardComponent = computed(() => {
     if (isMobile) {
         return CountryCardMobile;
     }
-    return CountryCard;
+    return CountryCardDesktop;
 })
 
 const showGrid = computed(() => !isLoading.value && countries.value.length);
