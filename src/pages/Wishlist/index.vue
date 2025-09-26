@@ -29,10 +29,6 @@ const { wishlist } = useWishlist()
     flex-direction: column;
     gap: 3vh;
 
-    &__header {
-        padding: 1rem 2.5rem 2.5rem;
-    }
-
     &__empty-state {
         padding: 10%;
     }
