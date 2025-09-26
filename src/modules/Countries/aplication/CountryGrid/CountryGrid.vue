@@ -22,6 +22,9 @@ import CountryCard from 'src/modules/Countries/aplication/CountryCardDesktop/Cou
 import CountryCardMobile from 'src/modules/Countries/aplication/CountryCardMobile/CountryCardMobile.vue';
 import type { Country } from '../../domain/entities/Country';
 import GridSkeleton from 'src/components/GridSkeleton.vue';
+import { useCountryStore } from 'src/stores/country-store';
+
+const { isMobile } = useCountryStore()
 
 const props = defineProps<{
     countries: Country[],
@@ -31,7 +34,7 @@ const props = defineProps<{
 const countries = computed(() => props.countries);
 const isLoading = computed(() => props.isLoading);
 const countryCardComponent = computed(() => {
-    if (window.innerWidth < 600) {
+    if (isMobile) {
         return CountryCardMobile;
     }
     return CountryCard;

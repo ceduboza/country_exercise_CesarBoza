@@ -16,6 +16,11 @@ export const useCountryStore = defineStore('country', {
     },
     loading: false,
   }),
+  getters: {
+    isMobile() {
+      return document.querySelector('body.mobile') !== null;
+    }
+  },
   actions: {
     getCountryList() {
       this.loading = true;
