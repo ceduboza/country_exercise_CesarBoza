@@ -22,7 +22,7 @@
 import { computed, ref, watch } from 'vue';
 import CountryCardDesktop from 'src/modules/Countries/aplication/CountryCardDesktop/CountryCardDesktop.vue';
 import CountryCardMobile from 'src/modules/Countries/aplication/CountryCardMobile/CountryCardMobile.vue';
-import type { Country } from '../../domain/entities/Country';
+import type { ICountryUI } from 'src/modules/Countries/domain/entities/ICountryUI';
 import GridSkeleton from 'src/components/GridSkeleton.vue';
 import { useCountryStore } from 'src/stores/country-store';
 
@@ -31,11 +31,11 @@ const PAGINATION_PAGE_SIZE = 10
 const { isMobile } = useCountryStore()
 
 const props = defineProps<{
-    countries: Country[],
+    countries: ICountryUI[],
     isLoading: boolean
 }>();
 
-const countriesToShow = ref<Country[]>([])
+const countriesToShow = ref<ICountryUI[]>([])
 const lastCountryIndex = ref<number>(PAGINATION_PAGE_SIZE)
 
 const countries = computed(() => props.countries)

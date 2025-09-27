@@ -1,14 +1,16 @@
-import type { Country } from "src/modules/Countries/domain/entities/Country";
 import type { CountryContract } from "src/modules/Countries/domain/entities/CountryContract";
+import { Country } from "src/modules/Countries/domain/entities/Country";
 
 export class CountryNormalizer {
     normalize(country: CountryContract[]): Country[] {
-        return country.map((country: CountryContract) => ({
-            name: country.name?.common || '',
-            capital: country.capital?.[0] || '',
-            flag: country?.flag || '',
-            population: country.population || 0,
-            region: country.region || '',
-        }))
+        return country.map((country: CountryContract) => (
+            new Country(
+                country.name?.common || '',
+                country.capital?.[0] || '',
+                country.population || 0,
+                country.region || '',
+                country.flag || ''
+            )
+        ));
     }
 }

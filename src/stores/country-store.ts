@@ -1,19 +1,16 @@
 import { defineStore } from 'pinia';
-import type { Country } from 'src/modules/Countries/domain/entities/Country';
+import type { ICountryUI } from 'src/modules/Countries/domain/entities/ICountryUI';
 
 interface State {
-  countries: Country[],
-  countryDetail: Country,
+  countries: ICountryUI[],
+  countryDetail: ICountryUI | null,
   loading: boolean,
 }
 
 export const useCountryStore = defineStore('country', {
   state: (): State => ({
     countries: [],
-    countryDetail: {
-      name: '',
-      capital: '',
-    },
+    countryDetail: null,
     loading: false,
   }),
   getters: {
@@ -25,7 +22,7 @@ export const useCountryStore = defineStore('country', {
     getCountryList() {
       this.loading = true;
 
-      this.$countryDataProvider.getCountries().then((countries: Country[]) => {
+      this.$countryDataProvider.getCountries().then((countries) => {
         this.countries = countries;
       }).catch((error) => {
         this.countries = [];
@@ -37,7 +34,7 @@ export const useCountryStore = defineStore('country', {
     getCountryListByName(name: string) {
       this.loading = true;
 
-      this.$countryDataProvider.getCountriesByName(name).then((countries: Country[]) => {
+      this.$countryDataProvider.getCountriesByName(name).then((countries) => {
         this.countries = countries;
       }).catch((error) => {
         this.countries = [];
@@ -49,24 +46,18 @@ export const useCountryStore = defineStore('country', {
     getCountryDetail(name: string) {
       this.loading = true;
       if (this.countries.length) {
-        const country = this.countries.find((country: Country) => country.name.toLowerCase() === name.toLowerCase());
-        this.countryDetail = country || {
-          name: '',
-          capital: '',
-        }
+        const country = this.countries.find((country) => country.name.toLowerCase() === name.toLowerCase());
+        this.countryDetail = country || null;
         this.loading = false;
       } else {
-        this.$countryDataProvider.getCountriesByName(name).then((countries: Country[]) => {
+        this.$countryDataProvider.getCountriesByName(name).then((countries) => {
           const selectedCountry = countries?.[0];
           if (selectedCountry) {
             this.countryDetail = selectedCountry;
           }
         }).catch((error) => {
           console.error('Failed to fetch countries by name:', error);
-          this.countryDetail = {
-            name: '',
-            capital: '',
-          };
+          this.countryDetail = null;
         }).finally(() => {
           this.loading = false;
         })

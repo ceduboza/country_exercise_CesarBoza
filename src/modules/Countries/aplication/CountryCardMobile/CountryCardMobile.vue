@@ -34,10 +34,10 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
-import type { Country } from 'src/modules/Countries/domain/entities/Country';
+import type { ICountryUI } from 'src/modules/Countries/domain/entities/ICountryUI';
 
 defineProps<{
-    country: Country
+    country: ICountryUI
 }>();
 </script>
 

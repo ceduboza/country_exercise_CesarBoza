@@ -1,25 +1,14 @@
 <template>
     <q-page class="contry-grid">
         <header-page title="Countries">
-            <q-btn
-                class="contry-grid__filter-btn"
-                round
-                icon="tune"
-                aria-label="Filters"
-                @click="toggleLeftDrawer"
-            />
+            <q-btn class="contry-grid__filter-btn" round icon="tune" aria-label="Filters" @click="toggleLeftDrawer" />
         </header-page>
         <country-grid :countries="countries" :isLoading="isLoading">
             <template #actions="{ country }">
                 <wishlist-icon :country="country" />
             </template>
         </country-grid>
-        <q-drawer
-            :width="300"
-            :overlay="true"
-            class="contry-grid__filter-drawer"
-            v-model="leftDrawerOpen"
-        >
+        <q-drawer :width="300" :overlay="true" class="contry-grid__filter-drawer" v-model="leftDrawerOpen">
             <q-item-label header>Filters</q-item-label>
             <q-separator light inset />
             <country-filter-form @onReset="toggleLeftDrawer" @onSubmit="toggleLeftDrawer" />

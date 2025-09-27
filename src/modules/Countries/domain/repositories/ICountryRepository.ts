@@ -1,6 +1,6 @@
-import type { Country } from "../entities/Country";
+import type { ICountryUI } from "../entities/ICountryUI";
 
 export interface ICountryRepository {
-    getCountries(): Promise<Country[]>;
-    getCountriesByName(name: string): Promise<Country[]>;
+    getCountries(): Promise<ICountryUI[]>;
+    getCountriesByName(name: string): Promise<ICountryUI[]>;
 }

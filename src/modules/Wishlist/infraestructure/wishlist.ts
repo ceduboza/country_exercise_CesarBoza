@@ -1,19 +1,25 @@
 import { useStorage } from '@vueuse/core'
-import type { Country } from 'src/modules/Countries/domain/entities/Country'
+import type { ICountryUI } from 'src/modules/Countries/domain/entities/ICountryUI'
 
 export const useWishlist = () => {
-    const wishlist = useStorage('wishlist', [] as Country[])
+    const wishlist = useStorage('wishlist', [] as ICountryUI[])
 
-    const addToWishlist = (country: Country) => {
-        wishlist.value.push(country)
+    const addToWishlist = (country: ICountryUI) => {
+        wishlist.value.push({
+            name: country.name,
+            capital: country.capital,
+            population: country.population,
+            region: country.region,
+            flag: country.flag
+        })
     }
 
-    const removeFromWishlist = (country: Country) => {
-        wishlist.value = wishlist.value.filter((c: Country) => c.name !== country.name)
+    const removeFromWishlist = (country: ICountryUI) => {
+        wishlist.value = wishlist.value.filter((wishlistCountry: ICountryUI) => wishlistCountry.name !== country.name)
     }
 
-    const isCountryInWishlist = (country: Country) => {
-        return wishlist.value.some((c: Country) => c.name === country.name)
+    const isCountryInWishlist = (country: ICountryUI) => {
+        return wishlist.value.some((wishlistCountry: ICountryUI) => wishlistCountry.name === country.name)
     }
 
     return {
