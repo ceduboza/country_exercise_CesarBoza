@@ -11,11 +11,6 @@
                         </component>
                     </li>
                 </ul>
-                <template v-slot:loading>
-                    <div class="row justify-center q-my-md">
-                        <q-spinner-dots color="primary" size="40px" />
-                    </div>
-                </template>
             </q-infinite-scroll>
         </template>
         <template v-else>
@@ -41,10 +36,11 @@ const props = defineProps<{
 }>();
 
 const countriesToShow = ref<Country[]>([])
-const lastCountryIndex = ref(PAGINATION_PAGE_SIZE)
+const lastCountryIndex = ref<number>(PAGINATION_PAGE_SIZE)
 
+const countries = computed(() => props.countries)
+const isLoading = computed(() => props.isLoading)
 const showGrid = computed(() => !isLoading.value && countriesToShow.value.length);
-const isLoading = computed(() => props.isLoading);
 const countryCardComponent = computed(() => {
     if (isMobile) {
         return CountryCardMobile;
@@ -53,23 +49,21 @@ const countryCardComponent = computed(() => {
 })
 
 const onLoad = (index: number, done: () => void) => {
-    if (lastCountryIndex.value >= props.countries.length) {
+    if (lastCountryIndex.value >= countries.value.length) {
         return;
     }
 
     stepNextPage()
     done()
 }
-
-watch(() => props.countries, () => {
-    stepNextPage()
-})
-
 const stepNextPage = () => {
     lastCountryIndex.value += PAGINATION_PAGE_SIZE
-    countriesToShow.value = props.countries.slice(0, lastCountryIndex.value)
+    countriesToShow.value = countries.value.slice(0, lastCountryIndex.value)
 }
 
+watch(countries, () => {
+    stepNextPage()
+}, { immediate: true })
 </script>
 
 <style scoped lang="scss">
