@@ -3,7 +3,7 @@ import type { ICountryRepository } from "../domain/repositories/ICountryReposito
 import { CountryNormalizer } from "./CountryNormalizer";
 
 export class CountryDataProvider implements ICountryRepository {
-    private _normalizer: CountryNormalizer;
+    _normalizer: CountryNormalizer;
 
     constructor() {
         this._normalizer = new CountryNormalizer();

@@ -1,6 +1,9 @@
-import type { ICountryUI } from "../entities/ICountryUI";
+import type { ICountryNormalizer } from "../normalizers/ICountryNormalizer";
+import type { Country } from "../entities/Country";
 
 export interface ICountryRepository {
-    getCountries(): Promise<ICountryUI[]>;
-    getCountriesByName(name: string): Promise<ICountryUI[]>;
+    _normalizer: ICountryNormalizer;
+
+    getCountries(): Promise<Country[]>;
+    getCountriesByName(name: string): Promise<Country[]>;
 }
