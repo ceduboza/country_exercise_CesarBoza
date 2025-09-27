@@ -1,5 +1,4 @@
 import type { Country } from "../domain/entities/Country";
-import type { CountryContract } from "../domain/entities/CountryContract";
 import type { ICountryRepository } from "../domain/repositories/ICountryRepository";
 import { CountryNormalizer } from "./CountryNormalizer";
 
@@ -17,12 +16,12 @@ export class CountryDataProvider implements ICountryRepository {
 
         return fetch(`https://restcountries.com/v3.1/all?${params}`, { method: 'GET' })
             .then(response => response.json())
-            .then(data => this._normalizer.normalize(data as CountryContract[]));
+            .then(data => this._normalizer.normalize(data));
     }
 
     getCountriesByName(name: string): Promise<Country[]> {
         return fetch(`https://restcountries.com/v3.1/name/${name}`, { method: 'GET' })
             .then(response => response.json())
-            .then(data => this._normalizer.normalize(data as CountryContract[]));
+            .then(data => this._normalizer.normalize(data));
     }
 }
