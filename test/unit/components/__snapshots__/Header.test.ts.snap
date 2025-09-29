@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header > should render the header 1`] = `
+"<div class="header">
+  <h1>Header</h1>
+  <div class="slot-content">Slot</div>
+</div>"
+`;

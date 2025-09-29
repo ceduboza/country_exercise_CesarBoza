@@ -5,13 +5,12 @@
     </div>
 </template>
 <script setup lang="ts">
-import { defineProps, computed } from 'vue';
+import { defineProps } from 'vue';
 
-const props = defineProps({
+defineProps({
     title: String
 })
 
-const title = computed(() => props.title)
 </script>
 <style lang="scss">
 .header {

@@ -1,7 +1,7 @@
 <template>
     <div class="empty-state">
         <q-icon :name="icon" size="10rem" />
-        <span>{{ title }}</span>
+        <span class="empty-state__title">{{ title }}</span>
     </div>
 </template>
 

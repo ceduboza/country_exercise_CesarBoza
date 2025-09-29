@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EmptyState > should render the empty state 1`] = `
+"<div class="empty-state">
+  <q-icon-stub name="empty" size="10rem" tag="i" left="false" right="false"></q-icon-stub><span class="empty-state__title">Empty State</span>
+</div>"
+`;

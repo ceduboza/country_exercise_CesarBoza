@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GridSkeleton > should render the grid skeleton 1`] = `
+"<ul>
+  <li>
+    <country-card-skeleton-stub></country-card-skeleton-stub>
+  </li>
+  <li>
+    <country-card-skeleton-stub></country-card-skeleton-stub>
+  </li>
+  <li>
+    <country-card-skeleton-stub></country-card-skeleton-stub>
+  </li>
+  <li>
+    <country-card-skeleton-stub></country-card-skeleton-stub>
+  </li>
+  <li>
+    <country-card-skeleton-stub></country-card-skeleton-stub>
+  </li>
+  <li>
+    <country-card-skeleton-stub></country-card-skeleton-stub>
+  </li>
+  <li>
+    <country-card-skeleton-stub></country-card-skeleton-stub>
+  </li>
+  <li>
+    <country-card-skeleton-stub></country-card-skeleton-stub>
+  </li>
+  <li>
+    <country-card-skeleton-stub></country-card-skeleton-stub>
+  </li>
+</ul>"
+`;
