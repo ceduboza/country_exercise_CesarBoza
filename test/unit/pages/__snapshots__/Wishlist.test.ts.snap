@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Wishlist > should render the wishlist page if wishlist is empty 1`] = `
+"<div unit-test-id="q-page" class="wishlist-page">
+  <header-page-stub title="Wishlist"></header-page-stub>
+  <empty-state-stub title="No countries in wishlist" icon="favorite" class="wishlist-page__empty-state"></empty-state-stub>
+</div>"
+`;
+
+exports[`Wishlist > should render the wishlist page if wishlist is not empty 1`] = `
+"<div unit-test-id="q-page" class="wishlist-page">
+  <header-page-stub title="Wishlist"></header-page-stub>
+  <div unit-test-id="country-grid" countries="[object Object]" isloading="false">
+    <wishlist-icon-stub country="[object Object]"></wishlist-icon-stub>
+  </div>
+</div>"
+`;

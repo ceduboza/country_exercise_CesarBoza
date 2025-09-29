@@ -6,7 +6,7 @@ exports[`Home > events > should change leftDrawerOpen value when countryFilterFo
     <q-btn-stub icon="tune" replace="false" disable="false" type="button" flat="false" outline="false" push="false" unelevated="false" square="false" rounded="false" glossy="false" fab="false" fabmini="false" nocaps="false" nowrap="false" dense="false" ripple="true" align="center" stack="false" stretch="false" round="true" darkpercentage="false" class="contry-grid__filter-btn" aria-label="Filters"></q-btn-stub>
   </div>
   <div unit-test-id="country-grid" countries="" isloading="false">
-    <wishlist-icon-stub></wishlist-icon-stub>
+    <wishlist-icon-stub country="[object Object]"></wishlist-icon-stub>
   </div>
   <div unit-test-id="q-drawer" width="300" overlay="true" class="contry-grid__filter-drawer" modelvalue="false">
     <q-item-label-stub overline="false" caption="false" header="true"></q-item-label-stub>
@@ -22,7 +22,7 @@ exports[`Home > events > should change leftDrawerOpen value when countryFilterFo
     <q-btn-stub icon="tune" replace="false" disable="false" type="button" flat="false" outline="false" push="false" unelevated="false" square="false" rounded="false" glossy="false" fab="false" fabmini="false" nocaps="false" nowrap="false" dense="false" ripple="true" align="center" stack="false" stretch="false" round="true" darkpercentage="false" class="contry-grid__filter-btn" aria-label="Filters"></q-btn-stub>
   </div>
   <div unit-test-id="country-grid" countries="" isloading="false">
-    <wishlist-icon-stub></wishlist-icon-stub>
+    <wishlist-icon-stub country="[object Object]"></wishlist-icon-stub>
   </div>
   <div unit-test-id="q-drawer" width="300" overlay="true" class="contry-grid__filter-drawer" modelvalue="false">
     <q-item-label-stub overline="false" caption="false" header="true"></q-item-label-stub>
@@ -38,23 +38,7 @@ exports[`Home > events > should change leftDrawerOpen value when the filter butt
     <q-btn-stub icon="tune" replace="false" disable="false" type="button" flat="false" outline="false" push="false" unelevated="false" square="false" rounded="false" glossy="false" fab="false" fabmini="false" nocaps="false" nowrap="false" dense="false" ripple="true" align="center" stack="false" stretch="false" round="true" darkpercentage="false" class="contry-grid__filter-btn" aria-label="Filters"></q-btn-stub>
   </div>
   <div unit-test-id="country-grid" countries="" isloading="false">
-    <wishlist-icon-stub></wishlist-icon-stub>
-  </div>
-  <div unit-test-id="q-drawer" width="300" overlay="true" class="contry-grid__filter-drawer" modelvalue="true">
-    <q-item-label-stub overline="false" caption="false" header="true"></q-item-label-stub>
-    <q-separator-stub spaced="false" inset="true" vertical="false" light=""></q-separator-stub>
-    <country-filter-form-stub></country-filter-form-stub>
-  </div>
-</div>"
-`;
-
-exports[`Home > events > should show the drawer when the filter button is clicked 1`] = `
-"<div unit-test-id="q-page" class="contry-grid">
-  <div unit-test-id="header-page" title="Countries">
-    <q-btn-stub icon="tune" replace="false" disable="false" type="button" flat="false" outline="false" push="false" unelevated="false" square="false" rounded="false" glossy="false" fab="false" fabmini="false" nocaps="false" nowrap="false" dense="false" ripple="true" align="center" stack="false" stretch="false" round="true" darkpercentage="false" class="contry-grid__filter-btn" aria-label="Filters"></q-btn-stub>
-  </div>
-  <div unit-test-id="country-grid" countries="" isloading="false">
-    <wishlist-icon-stub></wishlist-icon-stub>
+    <wishlist-icon-stub country="[object Object]"></wishlist-icon-stub>
   </div>
   <div unit-test-id="q-drawer" width="300" overlay="true" class="contry-grid__filter-drawer" modelvalue="true">
     <q-item-label-stub overline="false" caption="false" header="true"></q-item-label-stub>
@@ -70,7 +54,7 @@ exports[`Home > render > should render default the component 1`] = `
     <q-btn-stub icon="tune" replace="false" disable="false" type="button" flat="false" outline="false" push="false" unelevated="false" square="false" rounded="false" glossy="false" fab="false" fabmini="false" nocaps="false" nowrap="false" dense="false" ripple="true" align="center" stack="false" stretch="false" round="true" darkpercentage="false" class="contry-grid__filter-btn" aria-label="Filters"></q-btn-stub>
   </div>
   <div unit-test-id="country-grid" countries="" isloading="false">
-    <wishlist-icon-stub></wishlist-icon-stub>
+    <wishlist-icon-stub country="[object Object]"></wishlist-icon-stub>
   </div>
   <div unit-test-id="q-drawer" width="300" overlay="true" class="contry-grid__filter-drawer" modelvalue="false">
     <q-item-label-stub overline="false" caption="false" header="true"></q-item-label-stub>

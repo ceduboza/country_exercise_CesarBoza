@@ -3,6 +3,7 @@ import { describe, it, expect, vi } from "vitest";
 import { shallowMount } from "@vue/test-utils";
 import HomePage from "../../../src/pages/Home/index.vue";
 import { useCountryStore } from '../../../src/stores/country-store';
+import { QPage } from "quasar";
 
 vi.mock('../../../src/stores/country-store', () => ({
     useCountryStore: vi.fn()
@@ -36,27 +37,27 @@ describe("Home", () => {
         wrapper = shallowMount(HomePage, {
             global: {
                 stubs: {
-                    'q-page': {
+                    QPage: {
                         name: 'Qpage',
                         template: '<div unit-test-id="q-page"><slot /></div>',
                     },
-                    'q-drawer': {
+                    QDrawer: {
                         name: 'QDrawer',
                         template: '<div unit-test-id="q-drawer"><slot /></div>',
                     },
-                    'country-grid': {
+                    CountryGrid: {
                         name: 'CountryGrid',
-                        template: '<div unit-test-id="country-grid"><slot name="actions"/></div>',
+                        template: `<div unit-test-id="country-grid"><slot name="actions" :country='{ "name": "Test Country" }' /></div>`,
                     },
-                    'header-page': {
+                    HeaderPage: {
                         name: 'HeaderPage',
                         template: '<div unit-test-id="header-page"><slot /></div>',
                     },
-                    'q-item-label': true,
-                    'q-separator': true,
-                    'q-btn': true,
-                    'country-filter-form': true,
-                    'wishlist-icon': true,
+                    QItemLabel: true,
+                    QSeparator: true,
+                    QBtn: true,
+                    CountryFilterForm: true,
+                    WishlistIcon: true,
                 },
             },
         });
