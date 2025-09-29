@@ -30,7 +30,7 @@ const leftDrawerOpen = ref(false)
 const countries = computed(() => store.countries)
 const isLoading = computed(() => store.loading)
 
-function toggleLeftDrawer() {
+const toggleLeftDrawer = () => {
     leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 
