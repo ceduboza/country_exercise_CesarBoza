@@ -13,7 +13,7 @@ describe("EmptyState", () => {
             props,
             global: {
                 stubs: {
-                    'q-icon': true,
+                    QIcon: true,
                 },
             },
         });

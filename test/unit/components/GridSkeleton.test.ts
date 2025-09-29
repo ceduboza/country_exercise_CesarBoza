@@ -11,7 +11,7 @@ describe("GridSkeleton", () => {
         wrapper = shallowMount(GridSkeleton, {
             global: {
                 stubs: {
-                    'CountryCardSkeleton': true,
+                    CountryCardSkeleton: true,
                 },
             },
         })
